@@ -3,6 +3,8 @@
 This repo contains all the definitions of functions/constants/variables/structs that can be in a ogame ninja script.  
 Allowing you to use your favorite editor/IDE and enjoy smart autocompletion.
 
+For some examples of scripts using the go vm, refer to -> https://github.com/ogame-ninja/scripts/tree/master/official/go_vm
+
 - Download this repository
 - Work in your favorite environment VSCode/Goland IDE on the `main.go` file
 - Enjoy all the niceties of "go to definition" and "autocompletion"
