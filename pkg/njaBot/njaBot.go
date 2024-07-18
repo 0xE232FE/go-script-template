@@ -23,6 +23,17 @@ type ExpeditionsConfigs struct {
 	RecycleDebris bool
 	Sheets []Sheet
 }
+type FarmAttack struct {
+	Session *FarmSession
+	CelestialID ogame.CelestialID
+	Ships ogame.ShipsInfos
+	Where ogame.Coordinate
+	Speed ogame.Speed
+}
+type FarmSession struct {
+	FarmSession database.FarmSession
+	Cancel context.CancelFunc
+}
 type IVMBot interface {
 	DeleteScript(string) error
 	GetID() database.BotID
@@ -74,6 +85,12 @@ func (NJAFleetBuilder) SetShips(param1 ogame.ShipsInfos) *wrapper.FleetBuilder {
 func (NJAFleetBuilder) SetSpeed(param1 ogame.Speed) *wrapper.FleetBuilder { panic("not implemented") }
 func (NJAFleetBuilder) SetTx(param1 wrapper.Prioritizable) *wrapper.FleetBuilder { panic("not implemented") }
 func (NJAFleetBuilder) SetUnionID(param1 int64) *wrapper.FleetBuilder { panic("not implemented") }
+type PhalanxReport struct {
+	ID int64
+	SessionID int64
+	Data phalanxReportData
+	CreatedAt time.Time
+}
 type PlayerData struct {
 	ID int64
 	Name string

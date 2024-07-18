@@ -9,6 +9,7 @@ import "nja/pkg/njaBot"
 import "nja/pkg/tgbotapi"
 import "nja/pkg/database"
 import "nja/pkg/cron"
+import "nja/pkg/utils"
 import "nja/pkg/limiter"
 
 var ACADEMYOFSCIENCES ogame.ID
@@ -140,6 +141,7 @@ func ExecAtSync(interface {}, func()) { panic("not implemented") }
 func ExecIn(int64, func()) context.CancelFunc { panic("not implemented") }
 func ExecInCh(int64, func()) <-chan struct {} { panic("not implemented") }
 func ExecInSync(int64, func()) { panic("not implemented") }
+func Exit() { panic("not implemented") }
 var FIFTEEN_PERCENT float64
 var FIFTY_FIVE_PERCENT float64
 var FIFTY_PERCENT float64
@@ -373,7 +375,26 @@ var ORIKTORIUM ogame.ID
 var OVERCLOCKINGBATTLESHIP ogame.ID
 var OVERCLOCKINGHEAVYFIGHTER ogame.ID
 var OVERCLOCKINGLARGECARGO ogame.ID
-func OnFleetDispatch() chan ogame.Fleet { panic("not implemented") }
+func OnAttackCancelledCh() chan ogame.AttackEvent { panic("not implemented") }
+func OnAttackCh() chan ogame.AttackEvent { panic("not implemented") }
+func OnAttackDoneCh() chan ogame.AttackEvent { panic("not implemented") }
+func OnBotCh() chan interface {} { panic("not implemented") }
+func OnBotsCh() chan interface {} { panic("not implemented") }
+var OnChatMessageReceivedCh chan ogame.ChatMsg
+func OnFarmSessionAllSpySent() chan *njaBot.FarmSession { panic("not implemented") }
+func OnFarmSessionAttacksSent() chan *njaBot.FarmSession { panic("not implemented") }
+func OnFarmSessionBeforeAttack() chan njaBot.FarmAttack { panic("not implemented") }
+func OnFarmSessionDone() chan *njaBot.FarmSession { panic("not implemented") }
+func OnFarmSessionStart() chan *njaBot.FarmSession { panic("not implemented") }
+var OnFleetDispatch chan ogame.Fleet
+func OnGalaxyScanDone() chan struct {} { panic("not implemented") }
+func OnNewNjaUpdateReceivedCh() chan string { panic("not implemented") }
+func OnPhalanxReport() chan njaBot.PhalanxReport { panic("not implemented") }
+func OnQuitCh() chan struct {} { panic("not implemented") }
+func OnRepatriateCompletedCh() chan ogame.Resources { panic("not implemented") }
+func OnScriptsCh() chan interface {} { panic("not implemented") }
+func OnTelegramMessageReceivedCh() chan utils.TelegramMessage { panic("not implemented") }
+func OnTelegramUpdateReceivedCh() chan utils.TelegramUpdate { panic("not implemented") }
 func OwnBots() []njaBot.IVMBot { panic("not implemented") }
 var PARK int
 var PARKINTHATALLY int

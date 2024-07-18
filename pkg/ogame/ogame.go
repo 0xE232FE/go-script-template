@@ -74,6 +74,15 @@ type BuildingAccelerators interface {
 type CelestialID int64
 type CelestialType int64
 type CharacterClass int64
+type ChatMsg struct {
+	SenderID int64
+	SenderName string
+	AssociationID int64
+	Text string
+	ID int64
+	Date int64
+}
+func (ChatMsg) String() string { panic("not implemented") }
 type CombatReportSummary struct {
 	ID int64
 	APIKey string
