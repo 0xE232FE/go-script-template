@@ -1,3 +1,5 @@
+// Code generated DO NOT EDIT. (@generated)
+
 package nja
 
 import "time"
