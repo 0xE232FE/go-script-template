@@ -91,6 +91,7 @@ func ConstructionTime(ogame.ID, int64, ogame.Facilities) time.Duration { panic("
 func ConstructionsBeingBuilt(wrapper.IntoCelestial) (ogame.ID, int64, ogame.ID, int64) { panic("not implemented") }
 func ConstructionsBeingBuiltLf(wrapper.IntoCelestial) (ogame.ID, int64, ogame.ID, int64, ogame.ID, int64, ogame.ID, int64) { panic("not implemented") }
 func ConvertIntoCoordinate(interface {}) (ogame.Coordinate, error) { panic("not implemented") }
+var CookieDomain string
 func CoordinatesAvailableForDiscoveryFleet(wrapper.IntoCelestial, int64, int64) ([]ogame.Coordinate, error) { panic("not implemented") }
 func CreateFleet(ogame.FleetID, string) { panic("not implemented") }
 func CreateUnion(ogame.Fleet, []string) (int64, error) { panic("not implemented") }
@@ -315,6 +316,11 @@ var LfBuildingsHumansArr []ogame.ID
 var LfBuildingsKaeleshArr []ogame.ID
 var LfBuildingsMechasArr []ogame.ID
 var LfBuildingsRocktalArr []ogame.ID
+var LfTechnologiesArr []ogame.ID
+var LfTechnologiesHumansArr []ogame.ID
+var LfTechnologiesKaeleshArr []ogame.ID
+var LfTechnologiesMechasArr []ogame.ID
+var LfTechnologiesRocktalArr []ogame.ID
 func LogDebug(...interface {}) { panic("not implemented") }
 func LogDebugf(string, ...interface {}) { panic("not implemented") }
 func LogError(...interface {}) { panic("not implemented") }
@@ -378,26 +384,26 @@ var ORIKTORIUM ogame.ID
 var OVERCLOCKINGBATTLESHIP ogame.ID
 var OVERCLOCKINGHEAVYFIGHTER ogame.ID
 var OVERCLOCKINGLARGECARGO ogame.ID
-func OnAttackCancelledCh() chan ogame.AttackEvent { panic("not implemented") }
-func OnAttackCh() chan ogame.AttackEvent { panic("not implemented") }
-func OnAttackDoneCh() chan ogame.AttackEvent { panic("not implemented") }
-func OnBotCh() chan interface {} { panic("not implemented") }
-func OnBotsCh() chan interface {} { panic("not implemented") }
+var OnAttackCancelledCh chan ogame.AttackEvent
+var OnAttackCh chan ogame.AttackEvent
+var OnAttackDoneCh chan ogame.AttackEvent
+var OnBotCh chan interface {}
+var OnBotsCh chan interface {}
 var OnChatMessageReceivedCh chan ogame.ChatMsg
-func OnFarmSessionAllSpySent() chan *njaBot.FarmSession { panic("not implemented") }
-func OnFarmSessionAttacksSent() chan *njaBot.FarmSession { panic("not implemented") }
-func OnFarmSessionBeforeAttack() chan njaBot.FarmAttack { panic("not implemented") }
-func OnFarmSessionDone() chan *njaBot.FarmSession { panic("not implemented") }
-func OnFarmSessionStart() chan *njaBot.FarmSession { panic("not implemented") }
+var OnFarmSessionAllSpySent chan *njaBot.FarmSession
+var OnFarmSessionAttacksSent chan *njaBot.FarmSession
+var OnFarmSessionBeforeAttack chan njaBot.FarmAttack
+var OnFarmSessionDone chan *njaBot.FarmSession
+var OnFarmSessionStart chan *njaBot.FarmSession
 var OnFleetDispatch chan ogame.Fleet
-func OnGalaxyScanDone() chan struct {} { panic("not implemented") }
-func OnNewNjaUpdateReceivedCh() chan string { panic("not implemented") }
-func OnPhalanxReport() chan njaBot.PhalanxReport { panic("not implemented") }
-func OnQuitCh() chan struct {} { panic("not implemented") }
-func OnRepatriateCompletedCh() chan ogame.Resources { panic("not implemented") }
-func OnScriptsCh() chan interface {} { panic("not implemented") }
-func OnTelegramMessageReceivedCh() chan utils.TelegramMessage { panic("not implemented") }
-func OnTelegramUpdateReceivedCh() chan utils.TelegramUpdate { panic("not implemented") }
+var OnGalaxyScanDone chan struct {}
+var OnNewNjaUpdateReceivedCh chan string
+var OnPhalanxReport chan njaBot.PhalanxReport
+var OnQuitCh chan struct {}
+var OnRepatriateCompletedCh chan ogame.Resources
+var OnScriptsCh chan interface {}
+var OnTelegramMessageReceivedCh chan utils.TelegramMessage
+var OnTelegramUpdateReceivedCh chan utils.TelegramUpdate
 func OwnBots() []njaBot.IVMBot { panic("not implemented") }
 var PARK int
 var PARKINTHATALLY int
@@ -424,6 +430,8 @@ func PlayerDataByName(string) (njaBot.PlayerData, error) { panic("not implemente
 func PlayersData() ([]njaBot.PlayerDataShort, error) { panic("not implemented") }
 func Print(...interface {}) { panic("not implemented") }
 func Printf(string, ...interface {}) { panic("not implemented") }
+func PublishToBotsCh(interface {}) { panic("not implemented") }
+func PublishToScriptsCh(interface {}) { panic("not implemented") }
 var QUANTUMCOMPUTERCENTRE ogame.ID
 var REAPER ogame.ID
 var RECYCLEDEBRISFIELD int
@@ -483,11 +491,13 @@ func SendDiscoveryFleet(wrapper.IntoCelestial, wrapper.IntoCoordinate) error { p
 func SendDiscoveryFleet2(wrapper.IntoCelestial, wrapper.IntoCoordinate) (ogame.Fleet, error) { panic("not implemented") }
 func SendFleet(ogame.CelestialID, ogame.ShipsInfos, ogame.Speed, ogame.Coordinate, ogame.MissionID, ogame.Resources, int64, int64) (ogame.Fleet, error) { panic("not implemented") }
 func SendIPM(ogame.PlanetID, ogame.Coordinate, int64, ogame.ID) (int64, error) { panic("not implemented") }
+func SendMail(string, string, string) error { panic("not implemented") }
 func SendMessage(int64, string) error { panic("not implemented") }
 func SendMessageAlliance(int64, string) error { panic("not implemented") }
 func SendSavedFleet(int64) (ogame.Fleet, error) { panic("not implemented") }
 func SendSlack(string, string) error { panic("not implemented") }
 func SendTelegram(int64, string) error { panic("not implemented") }
+func SendTelegramReplyMarkup(int64, string, interface {}) (tgbotapi.Message, error) { panic("not implemented") }
 func ServerTime() time.Time { panic("not implemented") }
 func ServerURL() string { panic("not implemented") }
 func ServerVersion() string { panic("not implemented") }
