@@ -1,3 +1,5 @@
+// Code generated DO NOT EDIT. (@generated)
+
 package database
 
 import "time"
