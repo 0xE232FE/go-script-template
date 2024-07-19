@@ -2,14 +2,15 @@
 
 package njaBot
 
-import "context"
-import "time"
-import "nja/pkg/ogame"
-import "nja/pkg/wrapper"
-import "nja/pkg/simulator"
-import "nja/pkg/tgbotapi"
-import "nja/pkg/database"
-
+import (
+	"context"
+	"time"
+	"nja/pkg/database"
+	"nja/pkg/ogame"
+	"nja/pkg/simulator"
+	"nja/pkg/tgbotapi"
+	"nja/pkg/wrapper"
+)
 type ExpeditionsConfigs struct {
 	Strategy int64
 	WaveDelayMin int64

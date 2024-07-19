@@ -2,18 +2,19 @@
 
 package nja
 
-import "time"
-import "context"
-import "nja/pkg/gameforge"
-import "nja/pkg/ogame"
-import "nja/pkg/wrapper"
-import "nja/pkg/njaBot"
-import "nja/pkg/tgbotapi"
-import "nja/pkg/database"
-import "nja/pkg/cron"
-import "nja/pkg/utils"
-import "nja/pkg/limiter"
-
+import(
+	"context"
+	"time"
+	"nja/pkg/cron"
+	"nja/pkg/database"
+	"nja/pkg/gameforge"
+	"nja/pkg/limiter"
+	"nja/pkg/njaBot"
+	"nja/pkg/ogame"
+	"nja/pkg/tgbotapi"
+	"nja/pkg/utils"
+	"nja/pkg/wrapper"
+)
 var ACADEMYOFSCIENCES ogame.ID
 var ACOUSTICSCANNING ogame.ID
 var ADVANCEDRECYCLINGPLANT ogame.ID

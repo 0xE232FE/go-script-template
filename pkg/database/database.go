@@ -2,9 +2,10 @@
 
 package database
 
-import "time"
-import "nja/pkg/ogame"
-
+import (
+	"time"
+	"nja/pkg/ogame"
+)
 type BotID int64
 type BotPlanet struct {
 	ID int64

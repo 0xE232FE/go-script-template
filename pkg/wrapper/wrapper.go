@@ -2,12 +2,13 @@
 
 package wrapper
 
-import "nja/pkg/ogame"
-import "sync"
-import "time"
-import "net/http"
-import "net/url"
-
+import (
+	"net/http"
+	"net/url"
+	"sync"
+	"time"
+	"nja/pkg/ogame"
+)
 type Celestial interface {
 	ActivateItem(string) error
 	Build(ogame.ID, int64) error
