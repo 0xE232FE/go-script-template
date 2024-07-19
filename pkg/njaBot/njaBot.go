@@ -1,5 +1,7 @@
 package njaBot
 
+import "context"
+import "time"
 import "nja/pkg/ogame"
 import "nja/pkg/wrapper"
 import "nja/pkg/simulator"
@@ -88,9 +90,10 @@ func (NJAFleetBuilder) SetUnionID(param1 int64) *wrapper.FleetBuilder { panic("n
 type PhalanxReport struct {
 	ID int64
 	SessionID int64
-	Data phalanxReportData
+	Data PhalanxReportData
 	CreatedAt time.Time
 }
+type PhalanxReportData []ogame.PhalanxFleet
 type PlayerData struct {
 	ID int64
 	Name string
