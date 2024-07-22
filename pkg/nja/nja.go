@@ -26,7 +26,7 @@ var ARMOURTECHNOLOGY ogame.ID
 var ARTIFICIALSWARMINTELLIGENCE ogame.ID
 var ASSEMBLYLINE ogame.ID
 var ASTROPHYSICS ogame.ID
-var ATTACK int
+var ATTACK ogame.MissionID
 var AUTOMATEDTRANSPORTLINES ogame.ID
 var AUTOMATISEDASSEMBLYCENTRE ogame.ID
 func Abandon(wrapper.IntoPlanet) error { panic("not implemented") }
@@ -65,7 +65,7 @@ var CHIPMASSPRODUCTION ogame.ID
 var CHRYSALISACCELERATOR ogame.ID
 var CLONINGLABORATORY ogame.ID
 var COLLECTOR ogame.CharacterClass
-var COLONIZE int
+var COLONIZE ogame.MissionID
 var COLONYSHIP ogame.ID
 var COMBUSTIONDRIVE ogame.ID
 var COMPUTERTECHNOLOGY ogame.ID
@@ -106,14 +106,14 @@ var DEATHSTAR ogame.ID
 var DEBRIS_TYPE ogame.CelestialType
 var DEPOTAI ogame.ID
 var DEPTHSOUNDING ogame.ID
-var DESTROY int
+var DESTROY ogame.MissionID
 var DESTROYER ogame.ID
 var DESTROYERMKII ogame.ID
 var DEUTERIUMSYNTHESISER ogame.ID
 var DEUTERIUMSYNTHESIZER ogame.ID
 var DEUTERIUMTANK ogame.ID
 var DIAMONDENERGYTRANSMITTER ogame.ID
-func DISCORD_WEBHOOK() string { panic("not implemented") }
+var DISCORD_WEBHOOK string
 var DISCOVERER ogame.CharacterClass
 var DISRUPTIONCHAMBER ogame.ID
 func Date() (int, time.Month, int) { panic("not implemented") }
@@ -128,14 +128,14 @@ func Dotify(int64) string { panic("not implemented") }
 func DurationBetweenTimeStrings(string, string) time.Duration { panic("not implemented") }
 var EFFICIENCYMODULE ogame.ID
 var EFFICIENTSWARMINTELLIGENCE ogame.ID
-var EIGHTY_FIVE_PERCENT float64
-var EIGHTY_PERCENT float64
+var EIGHTY_FIVE_PERCENT ogame.Speed
+var EIGHTY_PERCENT ogame.Speed
 var ENERGYTECHNOLOGY ogame.ID
 var ENHANCEDPRODUCTIONTECHNOLOGIES ogame.ID
 var ENHANCEDSENSORTECHNOLOGY ogame.ID
 var ESPIONAGEPROBE ogame.ID
 var ESPIONAGETECHNOLOGY ogame.ID
-var EXPEDITION int
+var EXPEDITION ogame.MissionID
 var EXPERIMENTALRECYCLINGTECHNOLOGY ogame.ID
 var EXPERIMENTALWEAPONSTECHNOLOGY ogame.ID
 func EnableNJA() { panic("not implemented") }
@@ -146,16 +146,16 @@ func ExecIn(int64, func()) context.CancelFunc { panic("not implemented") }
 func ExecInCh(int64, func()) <-chan struct {} { panic("not implemented") }
 func ExecInSync(int64, func()) { panic("not implemented") }
 func Exit() { panic("not implemented") }
-var FIFTEEN_PERCENT float64
-var FIFTY_FIVE_PERCENT float64
-var FIFTY_PERCENT float64
+var FIFTEEN_PERCENT ogame.Speed
+var FIFTY_FIVE_PERCENT ogame.Speed
+var FIFTY_PERCENT ogame.Speed
 var FILE string
-var FIVE_PERCENT float64
+var FIVE_PERCENT ogame.Speed
 var FOODSILO ogame.ID
-var FORTY_FIVE_PERCENT float64
-var FORTY_PERCENT float64
+var FORTY_FIVE_PERCENT ogame.Speed
+var FORTY_PERCENT ogame.Speed
 var FORUMOFTRANSCENDENCE ogame.ID
-var FOURTY_PERCENT float64
+var FOURTY_PERCENT ogame.Speed
 var FUSIONCELLFACTORY ogame.ID
 var FUSIONDRIVES ogame.ID
 var FUSIONPOWEREDPRODUCTION ogame.ID
@@ -178,7 +178,7 @@ var GENERALOVERHAULLIGHTFIGHTER ogame.ID
 var GEOTHERMALPOWERPLANTS ogame.ID
 var GRAVITATIONSENSORS ogame.ID
 var GRAVITONTECHNOLOGY ogame.ID
-var GROUPEDATTACK int
+var GROUPEDATTACK ogame.MissionID
 func GalaxyInfos(int64, int64, ...wrapper.Option) (ogame.SystemInfos, error) { panic("not implemented") }
 func GalaxyInfosUsing(int64, int64, ogame.CelestialID) (ogame.SystemInfos, error) { panic("not implemented") }
 func GetActiveItems(wrapper.IntoCelestial) ([]ogame.ActiveItem, error) { panic("not implemented") }
@@ -271,7 +271,7 @@ var HIGHPERFORMANCETERRAFORMER ogame.ID
 var HIGHPERFORMANCETRANSFORMER ogame.ID
 var HIGHTEMPERATURESUPERCONDUCTORS ogame.ID
 var HUMANS ogame.LifeformType
-var HUNDRED_PERCENT float64
+var HUNDRED_PERCENT ogame.Speed
 var HYPERSPACEDRIVE ogame.ID
 var HYPERSPACETECHNOLOGY ogame.ID
 func ID2Str(ogame.ID) string { panic("not implemented") }
@@ -344,7 +344,7 @@ var METALSTORAGE ogame.ID
 var METROPOLIS ogame.ID
 var MICROCHIPASSEMBLYLINE ogame.ID
 var MINERALRESEARCHCENTRE ogame.ID
-var MISSILEATTACK int
+var MISSILEATTACK ogame.MissionID
 var MISSILESILO ogame.ID
 var MOON_TYPE ogame.CelestialType
 func MillisecondsBetweenTimeStrings(string, string) int64 { panic("not implemented") }
@@ -354,8 +354,8 @@ var NANOREPAIRBOTS ogame.ID
 var NEUROCALIBRATIONCENTRE ogame.ID
 var NEUROINTERFACE ogame.ID
 var NEUROMODALCOMPRESSOR ogame.ID
-var NINETY_FIVE_PERCENT float64
-var NINETY_PERCENT float64
+var NINETY_FIVE_PERCENT ogame.Speed
+var NINETY_PERCENT ogame.Speed
 var NONE_LF_TYPE ogame.LifeformType
 var NO_ALLIANCE_CLASS ogame.AllianceClass
 var NO_CLASS ogame.CharacterClass
@@ -405,8 +405,8 @@ var OnScriptsCh chan interface {}
 var OnTelegramMessageReceivedCh chan utils.TelegramMessage
 var OnTelegramUpdateReceivedCh chan utils.TelegramUpdate
 func OwnBots() []njaBot.IVMBot { panic("not implemented") }
-var PARK int
-var PARKINTHATALLY int
+var PARK ogame.MissionID
+var PARKINTHATALLY ogame.MissionID
 var PATHFINDER ogame.ID
 var PLANETARYSHIELD ogame.ID
 var PLANET_TYPE ogame.CelestialType
@@ -434,7 +434,7 @@ func PublishToBotsCh(interface {}) { panic("not implemented") }
 func PublishToScriptsCh(interface {}) { panic("not implemented") }
 var QUANTUMCOMPUTERCENTRE ogame.ID
 var REAPER ogame.ID
-var RECYCLEDEBRISFIELD int
+var RECYCLEDEBRISFIELD ogame.MissionID
 var RECYCLER ogame.ID
 var RESEARCHAI ogame.ID
 var RESEARCHCENTRE ogame.ID
@@ -458,18 +458,18 @@ func RepatriateSetAllDestinations(wrapper.IntoCelestial) error { panic("not impl
 func ResumeScript(string) error { panic("not implemented") }
 var SANCTUARY ogame.ID
 var SEABEDDEUTERIUMDEN ogame.ID
-var SEARCHFORLIFEFORMS int
+var SEARCHFORLIFEFORMS ogame.MissionID
 var SEISMICMININGTECHNOLOGY ogame.ID
 var SENSORPHALANX ogame.ID
-var SEVENTY_FIVE_PERCENT float64
-var SEVENTY_PERCENT float64
+var SEVENTY_FIVE_PERCENT ogame.Speed
+var SEVENTY_PERCENT ogame.Speed
 var SHIELDEDMETALDEN ogame.ID
 var SHIELDINGTECHNOLOGY ogame.ID
 var SHIPMANUFACTURINGHALL ogame.ID
 var SHIPYARD ogame.ID
 var SIXTHSENSE ogame.ID
-var SIXTY_FIVE_PERCENT float64
-var SIXTY_PERCENT float64
+var SIXTY_FIVE_PERCENT ogame.Speed
+var SIXTY_PERCENT ogame.Speed
 var SKYSCRAPER ogame.ID
 var SLINGSHOTAUTOPILOT ogame.ID
 var SMALLCARGO ogame.ID
@@ -477,7 +477,7 @@ var SMALLSHIELDDOME ogame.ID
 var SOLARPLANT ogame.ID
 var SOLARSATELLITE ogame.ID
 var SPACEDOCK ogame.ID
-var SPY int
+var SPY ogame.MissionID
 var STEALTHFIELDGENERATOR ogame.ID
 var SULPHIDEPROCESS ogame.ID
 var SUPERCOMPUTER ogame.ID
@@ -534,14 +534,14 @@ func StopScript(string) error { panic("not implemented") }
 var TELEGRAM_CHAT_ID int64
 var TELEKINETICDRIVE ogame.ID
 var TELEKINETICTRACTORBEAM ogame.ID
-var TEN_PERCENT float64
+var TEN_PERCENT ogame.Speed
 var TERRAFORMER ogame.ID
-var THIRTY_FIVE_PERCENT float64
-var THIRTY_PERCENT float64
+var THIRTY_FIVE_PERCENT ogame.Speed
+var THIRTY_PERCENT ogame.Speed
 var TRADER ogame.AllianceClass
-var TRANSPORT int
-var TWENTY_FIVE_PERCENT float64
-var TWENTY_PERCENT float64
+var TRANSPORT ogame.MissionID
+var TWENTY_FIVE_PERCENT ogame.Speed
+var TWENTY_PERCENT ogame.Speed
 func TearDown(wrapper.IntoCelestial, ogame.ID) error { panic("not implemented") }
 var TechnologiesArr []ogame.ID
 func TechnologyDetails(wrapper.IntoCelestial, ogame.ID) (ogame.TechnologyDetails, error) { panic("not implemented") }
