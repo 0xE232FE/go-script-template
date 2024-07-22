@@ -22,6 +22,10 @@ type ActiveItem struct {
 	ImgSmall string
 }
 type AllianceClass int64
+func (AllianceClass) IsResearcher() bool { panic("not implemented") }
+func (AllianceClass) IsTrader() bool { panic("not implemented") }
+func (AllianceClass) IsWarrior() bool { panic("not implemented") }
+func (AllianceClass) String() string { panic("not implemented") }
 type AllianceInfos struct {
 	ID int64
 	Name string
@@ -75,7 +79,13 @@ type BuildingAccelerators interface {
 }
 type CelestialID int64
 type CelestialType int64
+func (CelestialType) Int() int64 { panic("not implemented") }
+func (CelestialType) Int64() int64 { panic("not implemented") }
+func (CelestialType) String() string { panic("not implemented") }
 type CharacterClass int64
+func (CharacterClass) IsCollector() bool { panic("not implemented") }
+func (CharacterClass) IsDiscoverer() bool { panic("not implemented") }
+func (CharacterClass) IsGeneral() bool { panic("not implemented") }
 type ChatMsg struct {
 	SenderID int64
 	SenderName string
@@ -135,6 +145,7 @@ type DMCosts struct {
 }
 func (DMCosts) String() string { panic("not implemented") }
 type DMType string
+func (DMType) IsValid() bool { panic("not implemented") }
 type DefenseAccelerators interface {
 	GetNaniteFactory() int64
 	GetShipyard() int64
@@ -353,6 +364,8 @@ type FleetDispatchInfos struct {
 	ACSValues []ACSValues
 }
 type FleetID int64
+func (FleetID) IsSet() bool { panic("not implemented") }
+func (FleetID) String() string { panic("not implemented") }
 type Highscore struct {
 	NbPage int64
 	CurrPage int64
@@ -373,6 +386,22 @@ type HighscorePlayer struct {
 }
 func (HighscorePlayer) String() string { panic("not implemented") }
 type ID int64
+func (ID) Int() int64 { panic("not implemented") }
+func (ID) Int64() int64 { panic("not implemented") }
+func (ID) IsBuilding() bool { panic("not implemented") }
+func (ID) IsCombatShip() bool { panic("not implemented") }
+func (ID) IsDefense() bool { panic("not implemented") }
+func (ID) IsFacility() bool { panic("not implemented") }
+func (ID) IsFlyableShip() bool { panic("not implemented") }
+func (ID) IsLfBuilding() bool { panic("not implemented") }
+func (ID) IsLfTech() bool { panic("not implemented") }
+func (ID) IsResourceBuilding() bool { panic("not implemented") }
+func (ID) IsSet() bool { panic("not implemented") }
+func (ID) IsShip() bool { panic("not implemented") }
+func (ID) IsTech() bool { panic("not implemented") }
+func (ID) IsValid() bool { panic("not implemented") }
+func (ID) IsValidIPMTarget() bool { panic("not implemented") }
+func (ID) String() string { panic("not implemented") }
 type IFacilities interface {
 	ByID(ID) int64
 	GetAllianceDepot() int64
@@ -556,10 +585,171 @@ type Item struct {
 	AmountBought int64
 }
 type LazyFacilities func() Facilities
+func (LazyFacilities) ByID(param1 ID) int64 { panic("not implemented") }
+func (LazyFacilities) GetAllianceDepot() int64 { panic("not implemented") }
+func (LazyFacilities) GetJumpGate() int64 { panic("not implemented") }
+func (LazyFacilities) GetLunarBase() int64 { panic("not implemented") }
+func (LazyFacilities) GetMissileSilo() int64 { panic("not implemented") }
+func (LazyFacilities) GetNaniteFactory() int64 { panic("not implemented") }
+func (LazyFacilities) GetResearchLab() int64 { panic("not implemented") }
+func (LazyFacilities) GetRoboticsFactory() int64 { panic("not implemented") }
+func (LazyFacilities) GetSensorPhalanx() int64 { panic("not implemented") }
+func (LazyFacilities) GetShipyard() int64 { panic("not implemented") }
+func (LazyFacilities) GetSpaceDock() int64 { panic("not implemented") }
+func (LazyFacilities) GetTerraformer() int64 { panic("not implemented") }
 type LazyLfBuildings func() LfBuildings
+func (LazyLfBuildings) ByID(param1 ID) int64 { panic("not implemented") }
+func (LazyLfBuildings) GetAcademyOfSciences() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetAdvancedRecyclingPlant() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetAntimatterCondenser() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetAntimatterConvector() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetAssemblyLine() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetAutomatisedAssemblyCentre() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetBioModifier() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetBiosphereFarm() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetBiotechLab() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetChipMassProduction() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetChrysalisAccelerator() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetCloningLaboratory() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetCrystalFarm() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetCrystalRefinery() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetDeuteriumSynthesiser() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetDisruptionChamber() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetFoodSilo() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetForumOfTranscendence() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetFusionCellFactory() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetFusionPoweredProduction() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetHallsOfRealisation() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetHighEnergySmelting() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetHighPerformanceSynthesiser() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetHighPerformanceTransformer() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetMagmaForge() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetMeditationEnclave() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetMegalith() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetMetropolis() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetMicrochipAssemblyLine() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetMineralResearchCentre() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetNanoRepairBots() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetNeuroCalibrationCentre() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetOriktorium() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetPlanetaryShield() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetProductionAssemblyHall() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetPsionicModulator() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetQuantumComputerCentre() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetResearchCentre() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetResidentialSector() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetRoboticsResearchCentre() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetRuneForge() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetRuneTechnologium() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetSanctuary() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetShipManufacturingHall() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetSkyscraper() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetSupraRefractor() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetUpdateNetwork() int64 { panic("not implemented") }
+func (LazyLfBuildings) GetVortexChamber() int64 { panic("not implemented") }
 type LazyLfResearches func() LfResearches
+func (LazyLfResearches) ByID(param1 ID) *int64 { panic("not implemented") }
+func (LazyLfResearches) GetAcousticScanning() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetArtificialSwarmIntelligence() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetAutomatedTransportLines() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetBattlecruiserMkII() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetBomberMkII() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetCargoHoldExpansionCivilianShips() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetCatalyserTechnology() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetCruiserMkII() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetDepotAI() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetDepthSounding() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetDestroyerMkII() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetDiamondEnergyTransmitter() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetEfficiencyModule() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetEfficientSwarmIntelligence() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetEnhancedProductionTechnologies() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetEnhancedSensorTechnology() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetExperimentalRecyclingTechnology() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetExperimentalWeaponsTechnology() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetFusionDrives() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetGeneralOverhaulBattlecruiser() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetGeneralOverhaulBattleship() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetGeneralOverhaulBomber() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetGeneralOverhaulCruiser() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetGeneralOverhaulDestroyer() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetGeneralOverhaulLightFighter() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetGeothermalPowerPlants() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetGravitationSensors() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetHardenedDiamondDrillHeads() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetHeatRecovery() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetHighEnergyPumpSystems() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetHighPerformanceExtractors() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetHighPerformanceTerraformer() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetHighTemperatureSuperconductors() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetImprovedDroneAI() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetImprovedLabTechnology() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetImprovedStellarator() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetIntergalacticEnvoys() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetInterplanetaryAnalysisNetwork() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetIonCrystalEnhancementHeavyFighter() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetIonCrystalModules() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetKaeleshDiscovererEnhancement() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetLightFighterMkII() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetLowTemperatureDrives() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetMagmaPoweredProduction() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetMagmaPoweredPumpSystems() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetMechanGeneralEnhancement() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetNeuroInterface() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetNeuromodalCompressor() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetObsidianShieldReinforcement() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetOptimisedSiloConstructionMethod() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetOrbitalDen() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetOverclockingBattleship() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetOverclockingHeavyFighter() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetOverclockingLargeCargo() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetPlasmaDrive() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetPlasmaTerraformer() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetPsionicNetwork() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetPsionicShieldMatrix() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetPsychoharmoniser() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetResearchAI() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetRobotAssistants() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetRocktalCollectorEnhancement() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetRuneShields() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetSeismicMiningTechnology() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetSixthSense() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetSlingshotAutopilot() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetStealthFieldGenerator() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetSulphideProcess() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetSupercomputer() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetTelekineticDrive() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetTelekineticTractorBeam() *int64 { panic("not implemented") }
+func (LazyLfResearches) GetVolcanicBatteries() *int64 { panic("not implemented") }
 type LazyResearches func() Researches
+func (LazyResearches) ByID(param1 ID) int64 { panic("not implemented") }
+func (LazyResearches) GetArmourTechnology() int64 { panic("not implemented") }
+func (LazyResearches) GetAstrophysics() int64 { panic("not implemented") }
+func (LazyResearches) GetCombustionDrive() int64 { panic("not implemented") }
+func (LazyResearches) GetComputerTechnology() int64 { panic("not implemented") }
+func (LazyResearches) GetEnergyTechnology() int64 { panic("not implemented") }
+func (LazyResearches) GetEspionageTechnology() int64 { panic("not implemented") }
+func (LazyResearches) GetGravitonTechnology() int64 { panic("not implemented") }
+func (LazyResearches) GetHyperspaceDrive() int64 { panic("not implemented") }
+func (LazyResearches) GetHyperspaceTechnology() int64 { panic("not implemented") }
+func (LazyResearches) GetImpulseDrive() int64 { panic("not implemented") }
+func (LazyResearches) GetIntergalacticResearchNetwork() int64 { panic("not implemented") }
+func (LazyResearches) GetIonTechnology() int64 { panic("not implemented") }
+func (LazyResearches) GetLaserTechnology() int64 { panic("not implemented") }
+func (LazyResearches) GetPlasmaTechnology() int64 { panic("not implemented") }
+func (LazyResearches) GetShieldingTechnology() int64 { panic("not implemented") }
+func (LazyResearches) GetWeaponsTechnology() int64 { panic("not implemented") }
 type LazyResourcesBuildings func() ResourcesBuildings
+func (LazyResourcesBuildings) ByID(param1 ID) int64 { panic("not implemented") }
+func (LazyResourcesBuildings) GetCrystalMine() int64 { panic("not implemented") }
+func (LazyResourcesBuildings) GetCrystalStorage() int64 { panic("not implemented") }
+func (LazyResourcesBuildings) GetDeuteriumSynthesizer() int64 { panic("not implemented") }
+func (LazyResourcesBuildings) GetDeuteriumTank() int64 { panic("not implemented") }
+func (LazyResourcesBuildings) GetFusionReactor() int64 { panic("not implemented") }
+func (LazyResourcesBuildings) GetMetalMine() int64 { panic("not implemented") }
+func (LazyResourcesBuildings) GetMetalStorage() int64 { panic("not implemented") }
+func (LazyResourcesBuildings) GetSolarPlant() int64 { panic("not implemented") }
+func (LazyResourcesBuildings) GetSolarSatellite() int64 { panic("not implemented") }
 type LfBonuses struct {
 	LfResourceBonuses LfResourceBonuses
 	LfShipBonuses LfShipBonuses
@@ -923,6 +1113,7 @@ type MarketplaceMessage struct {
 }
 type MessagesTabID int64
 type MissionID int
+func (MissionID) String() string { panic("not implemented") }
 type Moon struct {
 	ID MoonID
 	Img string
@@ -939,6 +1130,7 @@ func (Moon) GetImg() string { panic("not implemented") }
 func (Moon) GetName() string { panic("not implemented") }
 func (Moon) GetType() CelestialType { panic("not implemented") }
 type MoonID int64
+func (MoonID) Celestial() CelestialID { panic("not implemented") }
 type MoonInfos struct {
 	ID int64
 	Name string
@@ -969,6 +1161,8 @@ func (Planet) GetName() string { panic("not implemented") }
 func (Planet) GetTemperature() Temperature { panic("not implemented") }
 func (Planet) GetType() CelestialType { panic("not implemented") }
 type PlanetID int64
+func (PlanetID) Celestial() CelestialID { panic("not implemented") }
+func (PlanetID) String() string { panic("not implemented") }
 type PlanetInfos struct {
 	ID int64
 	Activity int64
@@ -1187,6 +1381,10 @@ type Slots struct {
 }
 func (Slots) IsAllSlotsInUse(param1 MissionID) bool { panic("not implemented") }
 type Speed float64
+func (Speed) Float64() float64 { panic("not implemented") }
+func (Speed) Int() int64 { panic("not implemented") }
+func (Speed) Int64() int64 { panic("not implemented") }
+func (Speed) String() string { panic("not implemented") }
 type SystemInfos struct {
 	ExpeditionDebris struct { Metal int64; Crystal int64; Deuterium int64; PathfindersNeeded int64 }
 	Events struct { Darkmatter int64; HasAsteroid bool }

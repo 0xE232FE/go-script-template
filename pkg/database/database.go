@@ -7,6 +7,7 @@ import (
 	"nja/pkg/ogame"
 )
 type BotID int64
+func (BotID) String() string { panic("not implemented") }
 type BotPlanet struct {
 	ID int64
 	Idx int64

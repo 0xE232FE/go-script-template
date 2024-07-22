@@ -97,6 +97,7 @@ type PhalanxReport struct {
 	CreatedAt time.Time
 }
 type PhalanxReportData []ogame.PhalanxFleet
+func (PhalanxReportData) Value() (driver.Value, error) { panic("not implemented") }
 type PlayerData struct {
 	ID int64
 	Name string
